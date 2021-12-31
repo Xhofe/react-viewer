@@ -25,17 +25,24 @@ export default function ViewerNav(props: ViewerNavProps) {
 
   return (
     <div className={`${props.prefixCls}-navbar`}>
-      <ul className={`${props.prefixCls}-list ${props.prefixCls}-list-transition`} style={listStyle}>
-        {props.images.map((item, index) =>
+      <ul
+        className={`${props.prefixCls}-list ${props.prefixCls}-list-transition`}
+        style={listStyle}
+      >
+        {props.images.map((item, index) => (
           <li
-          key={index}
-          className={index === activeIndex ? 'active' : ''}
-          onClick={() => { handleChangeImg(index); }}
+            key={index}
+            className={index === activeIndex ? 'active' : ''}
+            onClick={() => {
+              handleChangeImg(index);
+            }}
           >
-            <img src={item.src} alt={item.alt} />
-          </li>,
-          )
-        }
+            <img
+              src={item.thumbnail ? item.thumbnail : item.src}
+              alt={item.alt}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );

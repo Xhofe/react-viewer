@@ -8,6 +8,7 @@ export interface ImageDecorator {
   alt?: string;
   downloadUrl?: string;
   defaultSize?: ViewerImageSize;
+  thumbnail?: string;
 }
 
 export interface ToolbarConfig {
