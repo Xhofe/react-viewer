@@ -10,6 +10,9 @@ export default (props: ViewerProps) => {
 
   React.useEffect(() => {
     document.body.appendChild(defaultContainer.current);
+    return () => {
+      document.body.removeChild(defaultContainer.current);
+    };
   }, []);
 
   React.useEffect(() => {
